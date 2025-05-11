@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { recentActivities } from '@/lib/constants/mockData';
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { recentActivities } from "@/public/constants/mockData";
 
 export function RecentActivity() {
   return (
@@ -18,7 +18,7 @@ export function RecentActivity() {
         <div className="space-y-8">
           {recentActivities.map((activity) => {
             const Icon = activity.icon;
-            
+
             return (
               <div key={activity.id} className="flex">
                 <div className="relative mr-4">
@@ -26,14 +26,19 @@ export function RecentActivity() {
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   {/* Line connecting to the next item */}
-                  {activity.id !== recentActivities[recentActivities.length - 1].id && (
+                  {activity.id !==
+                    recentActivities[recentActivities.length - 1].id && (
                     <div className="absolute top-9 bottom-0 left-1/2 w-px -translate-x-1/2 bg-border" />
                   )}
                 </div>
                 <div className="flex-1 space-y-1">
                   <p className="font-medium">{activity.title}</p>
-                  <p className="text-sm text-muted-foreground">{activity.description}</p>
-                  <p className="text-xs text-muted-foreground">{activity.time}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {activity.description}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {activity.time}
+                  </p>
                 </div>
               </div>
             );

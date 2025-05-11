@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { salesData } from '@/lib/constants/mockData';
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { salesData } from "@/public/constants/mockData";
 import {
   Area,
   AreaChart,
@@ -10,7 +10,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
+} from "recharts";
 
 export function SalesChart() {
   return (
@@ -37,8 +37,16 @@ export function SalesChart() {
             >
               <defs>
                 <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(var(--chart-1))" stopOpacity={0.4} />
-                  <stop offset="95%" stopColor="hsl(var(--chart-1))" stopOpacity={0} />
+                  <stop
+                    offset="5%"
+                    stopColor="hsl(var(--chart-1))"
+                    stopOpacity={0.4}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor="hsl(var(--chart-1))"
+                    stopOpacity={0}
+                  />
                 </linearGradient>
               </defs>
               <XAxis
